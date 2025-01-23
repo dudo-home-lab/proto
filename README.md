@@ -5,7 +5,7 @@
 Added as a git submodule within downstream repos.
 
 ```sh
-git submodule add https://github.com/gitops-ci-cd/proto.git ./proto
+git submodule add https://github.com/dudo-home-lab/proto.git ./proto
 ```
 
 > [!IMPORTANT]
@@ -29,9 +29,9 @@ protoc:
   entrypoint: protoc
   command:
     - --proto_path=./proto
-    - --go_opt=module=github.com/gitops-ci-cd/schema
+    - --go_opt=module=github.com/dudo-home-lab/schema
     - --go_out=./internal/gen/pb
-    - --go-grpc_opt=module=github.com/gitops-ci-cd/schema
+    - --go-grpc_opt=module=github.com/dudo-home-lab/schema
     - --go-grpc_out=./internal/gen/pb
     - proto/**/*.proto
   volumes:

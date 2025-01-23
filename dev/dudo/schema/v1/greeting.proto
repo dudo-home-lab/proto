@@ -1,9 +1,9 @@
 // edition = "2023";
 syntax = "proto3";
 
-package com.acme.schema.v1;
+package dev.dudo.schema.v1;
 
-option go_package = "github.com/gitops-ci-cd/schema/v1";
+option go_package = "github.com/dudo-home-lab/schema/v1";
 
 service GreetingService {
   rpc Fetch (GreetingRequest) returns (GreetingResponse);
