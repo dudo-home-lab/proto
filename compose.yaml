@@ -1,0 +1,8 @@
+services:
+  protoc:
+    build:
+      context: .
+    entrypoint: protoc
+    command: --help
+    volumes:
+      - .:/usr/src/app:delegated

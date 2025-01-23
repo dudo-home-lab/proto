@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+
+name: Build
+
+jobs:
+  build:
+    uses: gitops-ci-cd/.github/.github/workflows/build.yaml@main
+    with:
+      image_name: "${{ github.repository_owner }}/protoc"

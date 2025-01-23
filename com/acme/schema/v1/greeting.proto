@@ -1,0 +1,30 @@
+// edition = "2023";
+syntax = "proto3";
+
+package com.acme.schema.v1;
+
+option go_package = "github.com/gitops-ci-cd/schema/v1";
+
+service GreetingService {
+  rpc Fetch (GreetingRequest) returns (GreetingResponse);
+}
+
+enum Language {
+  UNKNOWN = 0; // Default value when language is not set
+  EN = 1;      // Generic English
+  EN_US = 2;   // American English
+  EN_GB = 3;   // British English
+  ES = 4;      // Spanish
+  FR = 5;      // French
+}
+
+message GreetingRequest {
+  // Preferred language for the greeting (e.g., EN, ES, FR). If not set, the server may return a default greeting.
+  Language language = 1;
+}
+
+message GreetingResponse {
+  Language language = 1;
+  string greeting = 2;
+  map<string, string> metadata = 3;
+}
